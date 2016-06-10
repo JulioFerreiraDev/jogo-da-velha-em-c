@@ -1,6 +1,8 @@
-#include <stdio.h>
-#define DIM 3
-int vez;
+//william schanoski,paulo souza,julio silva.
+
+#include <stdio.h> //declara biblioteca.
+#define DIM 3   //define funçao.
+int vez;        //variavel
 
 int menu(void);
 void clear(void);
@@ -15,9 +17,9 @@ int checaEmpate(int tabuleiro[][DIM]);
 int checaTermino(int tabuleiro[][DIM], int vez);
 void jogada(int tabuleiro[][DIM]);
 
-int main(void)
+int main(void)     //principal.
 {
-    int tabuleiro[DIM][DIM],
+    int tabuleiro[DIM][DIM],  //declara a variavel matriz.
         continuar;
 
     do
@@ -27,7 +29,7 @@ int main(void)
         if(continuar == 1)
             jogar(tabuleiro);
 
-    }while(continuar);
+    }while(continuar);        //loop.
 
     return 0;
 }

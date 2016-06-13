@@ -1,4 +1,4 @@
-//william schanoski,paulo souza,julio silva.
+//william schanoski,jean souza,julio silva.
 
 #include <stdio.h> //declara biblioteca.
 #define DIM 3   //define funçao.
@@ -38,12 +38,12 @@ int menu(void)
 {
     int opcao;
 
-        printf("\t\t JOGO DA VELHA \n");
-        printf("\n1.Jogar\n");
-        printf("0.Sair\n");
-        printf("\nOpcao: ");
+        printf("\t\t JOGO DA VELHA \n");   //escreva na tela
+        printf("\n1.Jogar\n"); //escreva na tela
+        printf("0.Sair\n");   //escreva na tela
+        printf("\nOpcao: ");   //escreva na tela
 
-        scanf("%d", &opcao);
+        scanf("%d", &opcao);   //leia 
 
         switch(opcao)
         {
@@ -52,7 +52,7 @@ int menu(void)
                 break;
            default:
                 clear();
-                printf("Opcao invalida. Tente de novo!\n");
+                printf("Opcao invalida. Tente de novo!\n");  //escreva na tela
         }
 
     return opcao;
@@ -62,7 +62,7 @@ void clear(void)
 {
     int count=0;
 
-    while(count != 100)
+    while(count != 100)  //loop
     {
         putchar('\n');
         count++;
@@ -82,20 +82,20 @@ void exibeTabuleiro(int tabuleiro[][DIM])
     int linha, coluna;
     putchar('\n');
 
-    for(linha = 0 ; linha < DIM ; linha++)
+    for(linha = 0 ; linha < DIM ; linha++)  /para
     {
-        for(coluna = 0 ; coluna < DIM ; coluna++)
+        for(coluna = 0 ; coluna < DIM ; coluna++)   //para
         {
             if(tabuleiro[linha][coluna] == 0)
-                printf("    ");
-            else
+                printf("    "); //escreva na tela
+            else   //se nao
                 if(tabuleiro[linha][coluna] == 1)
-                    printf("  X ");
-                else
-                    printf("  O ");
+                    printf("  X ");  //escreva na tela
+                else  //se nao
+                    printf("  O ");  //escreva na tela
 
-            if(coluna != (DIM-1))
-                printf("|");
+            if(coluna != (DIM-1))  //se 
+                printf("|");  //escreva na tela
         }
         putchar('\n');
     }
@@ -113,7 +113,7 @@ void jogar(int tabuleiro[][DIM])
         exibeTabuleiro(tabuleiro);
         jogada(tabuleiro);
 
-    }while(checaTermino(tabuleiro, vez) != 1);
+    }while(checaTermino(tabuleiro, vez) != 1);     //enquanto 
 }
 
 
@@ -121,7 +121,7 @@ int checaLocal(int tabuleiro[][DIM], int linha, int coluna)
 {
     if(linha < 0 || linha > (DIM-1) || coluna < 0 || coluna > (DIM-1) || tabuleiro[linha][coluna] != 0)
         return 0;
-    else
+    else   //se nao
         return 1;
 }
 
@@ -132,7 +132,7 @@ int checaLinha(int tabuleiro[][DIM])
 
     for(linha = 0 ; linha < DIM ; linha++)
     {
-        soma=0;
+        soma=0;   //processamento recebe
 
         for(coluna = 0 ; coluna < DIM ; coluna++)
             soma += tabuleiro[linha][coluna];
@@ -199,28 +199,28 @@ int checaTermino(int tabuleiro[][DIM], int vez)
 {
     if(checaLinha(tabuleiro))
     {
-        printf("Jogo encerrado. Jogador %d venceu !\n\n", (vez%2)+1);
+        printf("Jogo encerrado. Jogador %d venceu !\n\n", (vez%2)+1);   //escreva na tela
         exibeTabuleiro(tabuleiro);
         return 1;
     }
 
     if(checaColuna(tabuleiro))
     {
-        printf("Jogo encerrado. Jogador %d venceu !\n\n", (vez%2)+1);
+        printf("Jogo encerrado. Jogador %d venceu !\n\n", (vez%2)+1);  //escreva na tela
         exibeTabuleiro(tabuleiro);
         return 1;
     }
 
     if(checaDiagonal(tabuleiro))
     {
-        printf("Jogo encerrado. Jogador %d venceu !\n\n", (vez%2)+1);
+        printf("Jogo encerrado. Jogador %d venceu !\n\n", (vez%2)+1);   //escreva na tela
         exibeTabuleiro(tabuleiro);
         return 1;
     }
 
     if(checaEmpate(tabuleiro))
     {
-        printf("Jogo encerrado. Ocorreu um empate! !\n\n");
+        printf("Jogo encerrado. Ocorreu um empate! !\n\n");   //escreva na tela
         exibeTabuleiro(tabuleiro);
         return 1;
     }

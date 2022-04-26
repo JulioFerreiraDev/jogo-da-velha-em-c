@@ -1,2 +1,2 @@
-# jogo-da-velha-em-.c
+# jogoDaVelhaEmC
 jogo da velha em linguagem c comentado.

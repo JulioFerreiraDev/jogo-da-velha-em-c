@@ -1,4 +1,5 @@
-# Jogo da velha desenvolvido em linguagem C
+# Jogo da velha em linguagem C - training
+
 /* 
     Meu primeiro trabalho na graduação em Computação na Universidade Federal do Paraná
     Disciplina de Algoritmos e Estruturas de Dados I
